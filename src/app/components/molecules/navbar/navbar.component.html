@@ -1,0 +1,23 @@
+<nav
+  [class.-top-full]="closeNav"
+  [class.bottom-full]="closeNav"
+  class="fixed lg:static inset-0 bg-gray-500 lg:bg-transparent flex justify-center items-center transition-[top,bottom] duration-300"
+>
+  <span class="lg:hidden absolute top-5 right-5">
+    <ng-icon (click)="onToggleNav.emit()" name="matClose" class="text-3xl" />
+  </span>
+  <ul class="space-y-5 lg:space-y-0 text-2xl lg:text-lg lg:flex lg:gap-5">
+    <li
+      *ngFor="let item of navItems"
+      [ngClass]="{
+        'before:w-full': item.route === currentUrl,
+        'before:w-0': item.route !== currentUrl
+      }"
+      class="font-semibold cursor-pointer relative before:content-[''] before:absolute before:-bottom-1 before:h-[2px] before:bg-white before:transition-[width] before:duration-300 hover:before:w-full"
+    >
+      <a href="{{ item.route }}">
+        {{ item.name }}
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,15 @@
+<header class="bg-slate-700 text-white">
+  <div class="container mx-auto px-3 py-5 flex items-center">
+    <span class="text-2xl font-bold">
+      <a href="/">Rickoso</a>
+    </span>
+    <span class="ml-auto lg:hidden">
+      <ng-icon name="matMenu" class="text-3xl" (click)="onToggleNav()" />
+    </span>
+    <app-navbar
+      (onToggleNav)="onToggleNav()"
+      class="lg:ml-auto"
+      [closeNav]="closeNav"
+    />
+  </div>
+</header>
