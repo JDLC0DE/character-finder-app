@@ -12,7 +12,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Mobile Preview
 
-| ![Mobile Preview](/public/imgs/mobile-prev.jpeg) | ![Responsive Navbar](/public/imgs/responsive-nav-prev.jpeg) |
+![Mobile Preview](/public/imgs/mobile-prev.jpeg)
+
+![Responsive Navbar](/public/imgs/responsive-nav-prev.jpeg)
 
 ## Development server
 
