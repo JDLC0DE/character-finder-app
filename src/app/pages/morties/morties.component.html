@@ -1,1 +1,17 @@
-<p>morties works!</p>
+<main class="container mx-auto px-3 lg:px-40 xl:px-3 mt-5">
+  <div
+    infiniteScroll
+    (scrolled)="onScrollDown()"
+    class="grid grid-cols-1 xl:grid-cols-2 gap-8"
+  >
+    <app-card
+      *ngFor="let value of mortiesList"
+      [image]="value.image"
+      [nameOfCharacter]="value.nameOfCharacter"
+      [status]="value.status"
+      [species]="value.species"
+      [location]="value.location"
+      [firstApparition]="value.firstApparition"
+    />
+  </div>
+</main>

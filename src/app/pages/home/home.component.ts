@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { env } from 'src/envs/env';
 import { IData } from 'src/app/models/data';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -8,12 +9,14 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
-  constructor(private apiService: ApiService) {}
+  page = 1;
   dataList: IData[] = [];
 
-  ngOnInit() {
+  constructor(private apiService: ApiService) {}
+
+  loadCharacters() {
     this.apiService
-      .obtenerDatos('https://rickandmortyapi.com/api/character')
+      .obtenerDatos(`${env.apiUrl}/character?page=${this.page}`)
       .subscribe((data) => {
         data.results.forEach((result: any) => {
           this.apiService.obtenerDatos(result.episode[0]).subscribe((data) => {
@@ -27,6 +30,15 @@ export class HomeComponent implements OnInit {
             });
           });
         });
+        this.page++;
       });
+  }
+
+  onScrollDown() {
+    this.loadCharacters();
+  }
+
+  ngOnInit() {
+    this.loadCharacters();
   }
 }
