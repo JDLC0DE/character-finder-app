@@ -8,7 +8,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Tablet Preview
 
-![Tablet Preview](/public/imgs/desktop-prev.jpeg)
+![Tablet Preview](/public/imgs/tablet-prev.jpeg)
+
+## Mobile Preview
+
+![Mobile Preview](/public/imgs/mobile-prev.jpeg) ![Responsive Navbar](/public/imgs/responsive-nav-prev.jpeg)
 
 ## Development server
 
