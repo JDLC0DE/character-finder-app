@@ -1,7 +1,7 @@
 <nav
   [class.-top-full]="closeNav"
   [class.bottom-full]="closeNav"
-  class="fixed lg:static inset-0 bg-gray-500 lg:bg-transparent flex justify-center items-center transition-[top,bottom] duration-300"
+  class="fixed z-50 lg:static inset-0 bg-gray-500 lg:bg-transparent flex justify-center items-center transition-[top,bottom] duration-300"
 >
   <span class="lg:hidden absolute top-5 right-5">
     <ng-icon (click)="onToggleNav.emit()" name="matClose" class="text-3xl" />
