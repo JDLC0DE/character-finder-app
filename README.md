@@ -12,9 +12,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Mobile Preview
 
-![Mobile Preview](/public/imgs/mobile-prev.jpeg)
-
-![Responsive Navbar](/public/imgs/responsive-nav-prev.jpeg)
+<div style="display:flex;gap:10px;">
+  <img src="/public/imgs/mobile-prev.jpeg" alt="Mobile Preview">
+  <img src="/public/imgs/responsive-nav-prev.jpeg" alt="Responsive Navbar">
+<div>
 
 ## Development server
 
