@@ -1,0 +1,12 @@
+<div
+  [ngClass]="getInputContainerClass()"
+  class="rounded-lg border border-gray-400 w-full"
+>
+  <input
+    [type]="type"
+    (input)="handleChange($event)"
+    [ngClass]="getInputClass()"
+    [placeholder]="placeholder"
+    class="w-[inherit] h-full bg-transparent rounded-lg focus:outline-none font-normal placeholder:text-gray-400"
+  />
+</div>

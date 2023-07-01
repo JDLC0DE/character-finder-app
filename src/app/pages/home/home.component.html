@@ -1,17 +1,34 @@
 <main class="container mx-auto px-3 lg:px-40 xl:px-3 mt-5">
+  <app-input
+    placeholder="Busqueda general"
+    type="search"
+    class="w-full"
+    (onChange)="handleSearch($event)"
+  />
   <div
     infiniteScroll
     (scrolled)="onScrollDown()"
-    class="grid grid-cols-1 xl:grid-cols-2 gap-8"
+    [ngClass]="{
+      'grid grid-cols-1 xl:grid-cols-2 gap-8 mt-5': dataList.length > 0,
+      'flex justify-center items-center h-[inherit]': dataList.length === 0
+    }"
   >
-    <app-card
-      *ngFor="let value of dataList"
-      [image]="value.image"
-      [nameOfCharacter]="value.nameOfCharacter"
-      [status]="value.status"
-      [species]="value.species"
-      [location]="value.location"
-      [firstApparition]="value.firstApparition"
-    />
+    <ng-container *ngIf="!isLoading && !errorMessage">
+      <app-card
+        *ngFor="let value of dataList"
+        [image]="value.image"
+        [nameOfCharacter]="value.nameOfCharacter"
+        [status]="value.status"
+        [species]="value.species"
+        [location]="value.location"
+        [firstApparition]="value.firstApparition"
+      />
+    </ng-container>
+    <div class="text-4xl text-gray-900 font-bold mt-20" *ngIf="isLoading">
+      Cargando...
+    </div>
+    <div class="text-4xl text-gray-900 font-bold mt-20" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
   </div>
 </main>
